@@ -1,8 +1,9 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs-custom";
-import { Layers, AlertTriangle, FileText, Shield } from "lucide-react";
+import { Layers, AlertTriangle, FileText, Shield, Zap } from "lucide-react";
 import AppDemo from "@/components/demo/AppDemo";
 import ChallengesSection from "@/components/proposal/ChallengesSection";
 import ProposalSection from "@/components/proposal/ProposalSection";
+import { Badge } from "@/components/ui/badge";
 
 const Index = () => {
   return (
@@ -10,14 +11,20 @@ const Index = () => {
       {/* Header */}
       <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container max-w-5xl mx-auto px-4 py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl gradient-trust">
-              <Shield className="h-5 w-5 text-primary-foreground" />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl gradient-trust">
+                <Shield className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <div>
+                <h1 className="font-semibold text-foreground">Secure Work Identity Platform</h1>
+                <p className="text-xs text-muted-foreground">MVP Proposal by Humam Al Rubaye</p>
+              </div>
             </div>
-            <div>
-              <h1 className="font-semibold text-foreground">Secure Work Identity Platform</h1>
-              <p className="text-xs text-muted-foreground">MVP Proposal by Humam Al Rubaye</p>
-            </div>
+            <Badge variant="secondary" className="hidden sm:flex gap-1 bg-secure/10 text-secure">
+              <Zap className="h-3 w-3" />
+              Interactive Demo
+            </Badge>
           </div>
         </div>
       </header>
@@ -61,7 +68,10 @@ const Index = () => {
         <div className="container max-w-5xl mx-auto px-4 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
             <p>Built with React, TypeScript, Tailwind & shadcn/ui</p>
-            <p>Ready to start within 48 hours</p>
+            <div className="flex items-center gap-2">
+              <span className="flex h-2 w-2 rounded-full bg-secure animate-pulse" />
+              <p>Ready to start within 48 hours</p>
+            </div>
           </div>
         </div>
       </footer>
